@@ -4,11 +4,11 @@ set -e
 echo "Installing root dependencies..."
 npm install
 
-echo "Installing client dependencies..."
+echo "Installing client dependencies (including dev)..."
 cd client
-npm install
+npm install --include=dev
 
-echo "Building client..."
+echo "Building client with npx..."
 npx vite build
 
 echo "Build complete!"
