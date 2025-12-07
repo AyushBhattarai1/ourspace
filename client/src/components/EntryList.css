@@ -1,0 +1,26 @@
+.entry-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 20px;
+  border: 2px solid #ffe8f0;
+  grid-column: 1 / -1;
+}
+
+.empty-state p {
+  color: #ff8fab;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .entry-list {
+    grid-template-columns: 1fr;
+  }
+}

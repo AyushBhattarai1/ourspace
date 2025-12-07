@@ -1,0 +1,72 @@
+.mode-toggle-container {
+  background: white;
+  backdrop-filter: blur(10px);
+  padding: 30px 0;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(255, 107, 157, 0.08);
+  border-bottom: 3px solid #ffe8f0;
+}
+
+.mode-toggle {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.mode-toggle button {
+  background: white;
+  color: #ff6b9d;
+  border: 3px solid #ffb3c6;
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: 700;
+  min-width: 150px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.mode-toggle button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6b9d 0%, #ff8fab 100%);
+  transform: translate(-50%, -50%);
+  transition: width 0.4s, height 0.4s;
+  z-index: 0;
+}
+
+.mode-toggle button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.mode-toggle button:hover {
+  color: white;
+  border-color: #ff8fab;
+}
+
+.mode-toggle button span {
+  position: relative;
+  z-index: 1;
+}
+
+.mode-toggle button.active {
+  background: linear-gradient(135deg, #ff6b9d 0%, #ff8fab 100%);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 6px 20px rgba(255, 107, 157, 0.3);
+}
+
+.mode-description {
+  text-align: center;
+  color: #ff8fab;
+  font-size: 16px;
+  margin-top: 15px;
+  font-weight: 500;
+}
