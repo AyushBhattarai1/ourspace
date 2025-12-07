@@ -81,28 +81,32 @@
   
   .mode-toggle {
     gap: 10px;
+    padding: 0 10px;
   }
   
   .mode-toggle button {
-    padding: 12px 20px;
-    font-size: 15px;
-    min-width: 100px;
+    padding: 14px 16px;
+    font-size: 14px;
+    min-width: 90px;
     flex: 1;
   }
   
   .mode-description {
-    font-size: 14px;
+    font-size: 13px;
+    padding: 0 10px;
   }
 }
 
 @media (max-width: 480px) {
   .mode-toggle {
     flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
   }
   
   .mode-toggle button {
     width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+    padding: 16px;
+    font-size: 16px;
   }
 }
