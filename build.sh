@@ -8,7 +8,7 @@ echo "Installing client dependencies..."
 cd client
 npm install
 
-echo "Building client..."
-./node_modules/.bin/vite build
+echo "Building client with npm..."
+npm run build
 
 echo "Build complete!"
