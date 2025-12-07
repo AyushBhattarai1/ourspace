@@ -55,6 +55,11 @@ function Header({ user, partner, onLogout }) {
           <span>Hi, {user.name}</span>
           <button onClick={onLogout} className="btn-logout">Logout</button>
         </div>
+
+        {/* Mobile Logout Button */}
+        <button onClick={onLogout} className="btn-logout mobile-logout">
+          Logout
+        </button>
       </div>
 
       {/* Mobile Sidebar */}

@@ -291,20 +291,29 @@
   box-shadow: 0 6px 20px rgba(255, 107, 157, 0.3);
 }
 
+/* Mobile Logout Button */
+.mobile-logout {
+  display: none;
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
   .header-content {
     padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 15px;
   }
   
   .header-left {
     gap: 15px;
     width: 100%;
     justify-content: space-between;
+    grid-column: 1 / -1;
   }
   
   .header h1 {
-    font-size: 24px;
+    font-size: 22px;
   }
   
   /* Show hamburger on mobile */
@@ -319,6 +328,15 @@
   
   .desktop-user {
     display: none;
+  }
+  
+  /* Show mobile logout */
+  .mobile-logout {
+    display: block;
+    grid-column: 1 / -1;
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
   }
   
   /* Show mobile sidebar */
