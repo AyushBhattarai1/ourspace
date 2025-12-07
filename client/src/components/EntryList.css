@@ -19,8 +19,19 @@
   font-weight: 600;
 }
 
+@media (max-width: 1024px) {
+  .entry-list {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
   .entry-list {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .empty-state {
+    padding: 40px 15px;
   }
 }

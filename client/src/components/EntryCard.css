@@ -146,3 +146,49 @@
   flex: 1;
   font-weight: 700;
 }
+
+@media (max-width: 768px) {
+  .entry-card {
+    padding: 15px;
+  }
+  
+  .entry-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .entry-type {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+  
+  .entry-date {
+    font-size: 11px;
+  }
+  
+  .entry-card h3 {
+    font-size: 18px;
+  }
+  
+  .entry-body {
+    font-size: 14px;
+  }
+  
+  .entry-photos {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 8px;
+  }
+  
+  .entry-photos img {
+    height: 120px;
+  }
+  
+  .entry-actions {
+    flex-direction: column;
+  }
+  
+  .btn-edit,
+  .btn-delete {
+    width: 100%;
+  }
+}

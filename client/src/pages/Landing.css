@@ -635,17 +635,55 @@
 }
 
 @media (max-width: 768px) {
+  .landing-content {
+    padding: 30px 15px;
+  }
+
   .app-title {
-    font-size: 52px;
+    font-size: 42px;
+  }
+  
+  .tagline {
+    font-size: 18px;
+  }
+  
+  .landing-hero {
+    padding: 40px 25px;
   }
   
   .couple-names {
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
   }
   
   .name {
-    font-size: 48px;
+    font-size: 36px;
+  }
+  
+  .name::after {
+    bottom: -8px;
+    height: 3px;
+  }
+  
+  .heart-divider {
+    font-size: 32px;
+  }
+  
+  .hero-text {
+    font-size: 16px;
+  }
+  
+  .section-title {
+    font-size: 32px;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .feature-card {
+    padding: 35px 25px;
   }
   
   .steps-container {
@@ -654,6 +692,20 @@
   
   .step-arrow {
     transform: rotate(90deg);
+    font-size: 32px;
+  }
+  
+  .step-card {
+    min-width: 100%;
+  }
+  
+  .privacy-content {
+    grid-template-columns: 1fr;
+    padding: 40px 25px;
+  }
+  
+  .privacy-visual {
+    order: -1;
   }
   
   .modes-grid {
@@ -665,15 +717,19 @@
   }
   
   .btn-enter {
-    font-size: 22px;
-    padding: 20px 50px;
+    font-size: 20px;
+    padding: 18px 40px;
   }
   
   .testimonial-card {
-    padding: 50px 30px;
+    padding: 40px 25px;
   }
   
   .testimonial-text {
-    font-size: 20px;
+    font-size: 18px;
+  }
+  
+  .quote-mark {
+    font-size: 80px;
   }
 }

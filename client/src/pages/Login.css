@@ -161,3 +161,37 @@
   margin-bottom: 15px;
   font-weight: 600;
 }
+
+@media (max-width: 768px) {
+  .login-card {
+    padding: 35px 25px;
+    margin: 15px;
+  }
+  
+  .login-card h1 {
+    font-size: 32px;
+  }
+  
+  .subtitle {
+    font-size: 15px;
+  }
+  
+  .login-card input {
+    padding: 14px 18px;
+    font-size: 15px;
+  }
+  
+  .btn-primary {
+    padding: 14px;
+    font-size: 16px;
+  }
+  
+  .btn-secondary {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .quick-login p {
+    font-size: 14px;
+  }
+}

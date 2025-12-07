@@ -1,9 +1,9 @@
 .mode-toggle-container {
   background: white;
   backdrop-filter: blur(10px);
-  padding: 30px 0;
+  padding: 25px 0;
   margin-bottom: 30px;
-  box-shadow: 0 4px 15px rgba(255, 107, 157, 0.08);
+  box-shadow: 0 4px 15px rgba(255, 107, 157, 0.1);
   border-bottom: 3px solid #ffe8f0;
 }
 
@@ -11,17 +11,19 @@
   display: flex;
   gap: 15px;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  padding: 0 15px;
 }
 
 .mode-toggle button {
   background: white;
   color: #ff6b9d;
   border: 3px solid #ffb3c6;
-  padding: 16px 40px;
-  font-size: 18px;
+  padding: 14px 35px;
+  font-size: 17px;
   font-weight: 700;
-  min-width: 150px;
+  min-width: 140px;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -60,7 +62,7 @@
   background: linear-gradient(135deg, #ff6b9d 0%, #ff8fab 100%);
   color: white;
   border-color: transparent;
-  box-shadow: 0 6px 20px rgba(255, 107, 157, 0.3);
+  box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
 }
 
 .mode-description {
@@ -69,4 +71,38 @@
   font-size: 16px;
   margin-top: 15px;
   font-weight: 500;
+  padding: 0 15px;
+}
+
+@media (max-width: 768px) {
+  .mode-toggle-container {
+    padding: 20px 0;
+  }
+  
+  .mode-toggle {
+    gap: 10px;
+  }
+  
+  .mode-toggle button {
+    padding: 12px 20px;
+    font-size: 15px;
+    min-width: 100px;
+    flex: 1;
+  }
+  
+  .mode-description {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mode-toggle {
+    flex-direction: column;
+  }
+  
+  .mode-toggle button {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
 }

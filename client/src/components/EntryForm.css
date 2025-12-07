@@ -114,3 +114,41 @@
   font-size: 18px;
   font-weight: 700;
 }
+
+@media (max-width: 768px) {
+  .entry-form {
+    padding: 20px 15px;
+  }
+  
+  .entry-form h2 {
+    font-size: 24px;
+  }
+  
+  .form-group label {
+    font-size: 14px;
+  }
+  
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    font-size: 14px;
+    padding: 12px 15px;
+  }
+  
+  .photo-preview {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+  
+  .photo-item img {
+    height: 100px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .btn-submit,
+  .form-actions .btn-cancel {
+    width: 100%;
+  }
+}
