@@ -42,6 +42,12 @@ function Header({ user, partner, onLogout }) {
               Dashboard
             </button>
             <button 
+              className={isActive('/chat') ? 'nav-link active' : 'nav-link'}
+              onClick={() => handleNavigation('/chat')}
+            >
+              Chat
+            </button>
+            <button 
               className={isActive('/gallery') ? 'nav-link active' : 'nav-link'}
               onClick={() => handleNavigation('/gallery')}
             >
@@ -86,6 +92,13 @@ function Header({ user, partner, onLogout }) {
             >
               <span className="link-icon">📊</span>
               Dashboard
+            </button>
+            <button 
+              className={isActive('/chat') ? 'sidebar-link active' : 'sidebar-link'}
+              onClick={() => handleNavigation('/chat')}
+            >
+              <span className="link-icon">💬</span>
+              Chat
             </button>
             <button 
               className={isActive('/gallery') ? 'sidebar-link active' : 'sidebar-link'}

@@ -7,6 +7,7 @@ import { fileURLToPath } from 'url';
 import connectDB from './db.js';
 import User from './models/User.js';
 import Entry from './models/Entry.js';
+import Message from './models/Message.js';
 import { generateToken, verifyToken } from './auth.js';
 import { upload, isCloudinaryConfigured } from './cloudinary.js';
 
@@ -259,6 +260,72 @@ app.post('/api/upload', verifyToken, upload.single('photo'), (req, res) => {
     : `/uploads/${req.file.filename}`; // Local URL
   
   res.json({ url });
+});
+
+// Chat routes
+app.get('/api/messages', verifyToken, async (req, res) => {
+  try {
+    const partner = await User.findOne({ _id: { $ne: req.user.id } });
+    
+    const messages = await Message.find({
+      $or: [
+        { sender_id: req.user.id, receiver_id: partner._id },
+        { sender_id: partner._id, receiver_id: req.user.id }
+      ]
+    }).sort({ createdAt: 1 });
+    
+    const formattedMessages = messages.map(msg => ({
+      id: msg._id.toString(),
+      sender_id: msg.sender_id.toString(),
+      receiver_id: msg.receiver_id.toString(),
+      message: msg.message,
+      read: msg.read,
+      read_at: msg.read_at,
+      created_at: msg.createdAt
+    }));
+    
+    res.json({ messages: formattedMessages });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.post('/api/messages', verifyToken, async (req, res) => {
+  try {
+    const { message } = req.body;
+    const partner = await User.findOne({ _id: { $ne: req.user.id } });
+    
+    const newMessage = await Message.create({
+      sender_id: req.user.id,
+      receiver_id: partner._id,
+      message
+    });
+    
+    res.json({
+      message: {
+        id: newMessage._id.toString(),
+        sender_id: newMessage.sender_id.toString(),
+        receiver_id: newMessage.receiver_id.toString(),
+        message: newMessage.message,
+        read: newMessage.read,
+        created_at: newMessage.createdAt
+      }
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.put('/api/messages/mark-read', verifyToken, async (req, res) => {
+  try {
+    await Message.updateMany(
+      { receiver_id: req.user.id, read: false },
+      { read: true, read_at: new Date() }
+    );
+    res.json({ success: true });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 });
 
 // Error handling middleware

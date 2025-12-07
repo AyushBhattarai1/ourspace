@@ -5,6 +5,7 @@ import Landing from './pages/Landing';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Gallery from './pages/Gallery';
+import Chat from './pages/Chat';
 import { api } from './api';
 
 function App() {
@@ -66,6 +67,7 @@ function App() {
         <Route path="/login" element={user ? <Navigate to="/dashboard" /> : <Login onLogin={handleLogin} />} />
         <Route path="/dashboard/*" element={user ? <Dashboard user={user} onLogout={handleLogout} /> : <Navigate to="/login" />} />
         <Route path="/gallery" element={user ? <Gallery user={user} onLogout={handleLogout} /> : <Navigate to="/login" />} />
+        <Route path="/chat" element={user ? <Chat user={user} onLogout={handleLogout} /> : <Navigate to="/login" />} />
       </Routes>
     </BrowserRouter>
   );
